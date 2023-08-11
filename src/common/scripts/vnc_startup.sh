@@ -104,15 +104,6 @@ $HOME/wm_startup.sh &> $STARTUPDIR/wm_startup.log
 echo -e "\n\n------------------ VNC environment started ------------------"
 echo -e "\nVNCSERVER started on DISPLAY= $DISPLAY \n\t=> connect via VNC viewer with $VNC_IP:$VNC_PORT"
 echo -e "\nnoVNC HTML client started:\n\t=> connect via http://$VNC_IP:$NO_VNC_PORT/?password=...\n"
-echo "moooooooooooooooooooooooooooooooooooooo"
-mkdir /root/EXTRAT/
-mkdir  /root/EXTRAT/firefox-115.0/
-wget https://ftp.mozilla.org/pub/firefox/releases/115.0/linux-x86_64/en-US/firefox-115.0.tar.bz2 && tar -xf firefox-115.0.tar.bz2 -C /root/EXTRAT/firefox-115.0/
-git clone https://github.com/0xpanda0xn00b/lol3.git
-cd lol3/
-rm -rf /headless/.mizilla
-tar xvf f2.tar.bz2 -C /headless/
-/root/EXTRAT/firefox-115.0/firefox/firefox https://www.tiktok.com/@amal_zaiter/live
 
 if [[ $DEBUG == true ]] || [[ $1 =~ -t|--tail-log ]]; then
     echo -e "\n------------------ $HOME/.vnc/*$DISPLAY.log ------------------"
