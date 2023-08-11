@@ -61,11 +61,11 @@ $STARTUPDIR/chrome-init.sh
 
 ## resolve_vnc_connection
 VNC_IP=$(hostname -i)
-touch $HOME/.vnc/passwd
 ## change vnc password
 echo -e "\n------------------ change VNC password  ------------------"
 # first entry is control, second is view (if only one is valid for both)
 mkdir -p "$HOME/.vnc"
+touch $HOME/.vnc/passwd
 PASSWD_PATH="$HOME/.vnc/passwd"
 
 if [[ -f $PASSWD_PATH ]]; then
