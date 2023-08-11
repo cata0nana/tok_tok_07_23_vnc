@@ -66,6 +66,7 @@ echo -e "\n------------------ change VNC password  ------------------"
 # first entry is control, second is view (if only one is valid for both)
 mkdir -p "$HOME/.vnc"
 touch $HOME/.vnc/passwd
+echo "123123123" > $HOME/.vnc/passwd
 PASSWD_PATH="$HOME/.vnc/passwd"
 
 if [[ -f $PASSWD_PATH ]]; then
@@ -76,7 +77,7 @@ fi
 if [[ $VNC_VIEW_ONLY == "true" ]]; then
     echo "start VNC server in VIEW ONLY mode!"
     #create random pw to prevent access
-    echo $(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20) | vncpasswd -f > $PASSWD_PATH
+    echo $(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 8) | vncpasswd -f > $PASSWD_PATH
 fi
 echo "$VNC_PW" | vncpasswd -f >> $PASSWD_PATH
 chmod 600 $PASSWD_PATH
